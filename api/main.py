@@ -9,11 +9,9 @@ from os.path import join, dirname
 
 def create_app(environment):
     app = Flask(__name__)
-    # CORS(app)
     app.config.from_object(environment)
     app.register_blueprint(api_metrics)
     migrate = Migrate(app, db)
-    print('here')
     with app.app_context():
         db.init_app(app)
         db.create_all()

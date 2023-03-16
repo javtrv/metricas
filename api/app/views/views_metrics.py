@@ -7,11 +7,6 @@ from ..schema import metric_schema, metrics_schema, metric_params_schema
 api_metrics = Blueprint('metrics', __name__, url_prefix='/api-metrics')
 
 
-@api_metrics.route('/')
-def index():
-    return 'Hello World'
-
-
 def set_metric(func):
     def wrap(*args, **kwargs):
         id = kwargs.get('id', 0)
@@ -27,7 +22,7 @@ def set_metric(func):
 @api_metrics.route('/metrics', methods=['GET'])
 def get_metrics():
     all_metrics = Metric.query.all()
-    return response(metric_schema.dump(all_metrics))
+    return response(metrics_schema.dump(all_metrics))
 
 @api_metrics.route('/metric', methods=['POST'])
 def add_metric():
