@@ -1,5 +1,4 @@
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from app.models import db
 from config import config
@@ -14,6 +13,7 @@ def create_app(environment):
     app.config.from_object(environment)
     app.register_blueprint(api_metrics)
     migrate = Migrate(app, db)
+    print('here')
     with app.app_context():
         db.init_app(app)
         db.create_all()
@@ -25,9 +25,6 @@ load_dotenv(dotenv_path)
 
 environment = config[os.environ.get("ENVIROMENT")]
 app = create_app(environment)
-
-
-# db = SQLAlchemy(app)
 
 
 

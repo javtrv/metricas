@@ -1,3 +1,4 @@
+from . import db
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 import uuid
@@ -5,10 +6,6 @@ from sqlalchemy.dialects.postgresql import UUID
 import sys
 
 
-# Creación de una instancia de SQLAlchemy
-db = SQLAlchemy()
-
-# Definición del modelo Metric
 class Metric(db.Model):
     __tablename__ = 'metric'
     id = db.Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
