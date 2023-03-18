@@ -26,8 +26,8 @@ def get_metrics():
 
 @api_metrics.route('/metric', methods=['POST'])
 def add_metric():
-    
     json = request.get_json(force=True)
+    print(json)
     if metric_params_schema.validate(json):
         return bad_request(metric_params_schema.validate(json))
     

@@ -2,6 +2,7 @@ from flask import Flask
 from flask_migrate import Migrate
 from app.models import db
 from config import config
+from flask_cors import CORS
 from app.views.views_metrics import api_metrics
 import os
 from dotenv import load_dotenv
@@ -9,6 +10,7 @@ from os.path import join, dirname
 
 def create_app(environment):
     app = Flask(__name__)
+    CORS(app)
     app.config.from_object(environment)
     app.register_blueprint(api_metrics)
     migrate = Migrate(app, db)
