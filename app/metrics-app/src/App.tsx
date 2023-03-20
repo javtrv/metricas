@@ -4,7 +4,7 @@ import FormAddMetric from './components/FormAddMetric'
 import Reports from './components/Reports'
 
 const App: React.FC = () => {
-  const [showForm, setShowForm] = useState<boolean>(false)
+  const [showForm, setShowForm] = useState<boolean>(true)
   return (
     <div className="App">
       <header>
