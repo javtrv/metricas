@@ -5,21 +5,34 @@ Frontend + Backend application that allows you to post and visualize metrics in 
 This app consist in two separated tools:
 
 ## Metrics - API
-The backend api was build using Flask and a Postgres DB. 
+The backend api was built using Flask and a Postgres DB. 
 This api allows you to create metrics and reporte then by date range.
 The metrics have a name, a value and a date.
 
+The Postgres DB was deployed in [Render](https://render.com/)
+
 ### Requisites
 ***
-* A Postgres DB
-* Python and pip installed
-* A virtual environment with python 3.10
+* Python3.10 and pip installed
+
 
 
 #### Installation
 ***
 
-  Inside the api folder, create a virtual environment, run it and install the requirements:
+  Inside the api folder, create a virtual environment:
+    
+    ```
+    $ python3 -m venv metrics-env
+    ```
+    
+  Activate the virtual environment:
+    
+    ```
+    $ source metrics-env/bin/activate
+    ```
+
+  Inside your virtual environment, install the requirements:
   
   ```
   $ pip install -r requirements.txt
