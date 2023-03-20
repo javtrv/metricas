@@ -8,7 +8,7 @@ import '../assets/css/Reports.css'
 
 const Reports: React.FC = () => {
   const [reportedMetrics, setReportedMetrics] = useState<MetricsArray>([])
-  const [formatedChartData, setFormatedChartData] = useState<formatedChartData>()
+  const [formatedChartData, setFormatedChartData] = useState<formatedChartData[]>([])
   const [showReports, setShowReports] = useState<boolean>(false)
   const [datesToSearch, setDatesToSearch] = useState<FormReportsType>({ startDate: '', endDate: '' })
 

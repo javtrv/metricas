@@ -3,7 +3,7 @@ import { metricsNames, metricsColors } from '../const'
 import { type formatedChartData } from '../types/types'
 
 interface Props {
-  formatedChartData: formatedChartData | any
+  formatedChartData: formatedChartData[]
 }
 
 const Chart: React.FC<Props> = ({ formatedChartData }) => {

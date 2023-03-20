@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { API_URL } from '../API'
 import { type FormReportsType } from '../types/types'
 
-export const useReports = () => {
+export const useReports = (): unknown => {
   const INITIAL_STATE = { startDate: '', endDate: '' }
 
   const [formValues, setFormValues] = useState<FormReportsType>(INITIAL_STATE)

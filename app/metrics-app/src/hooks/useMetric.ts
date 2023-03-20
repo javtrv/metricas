@@ -3,7 +3,7 @@ import axios from 'axios'
 import { API_URL } from '../API'
 import { type Metric } from '../types/types'
 
-export const useMetric = () => {
+export const useMetric = (): unknown => {
   const INITIAL_STATE: Metric = { name: '', value: 0, date: '' }
 
   const [formValues, setFormValues] = useState<Metric>(INITIAL_STATE)
