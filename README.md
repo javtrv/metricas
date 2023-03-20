@@ -19,16 +19,22 @@ The metrics have a name, a value and a date.
 #### Installation
 ***
 
-Inside the api folder, create a virtual environment, run it and install the requirements:
+  Inside the api folder, create a virtual environment, run it and install the requirements:
   
   ```
   $ pip install -r requirements.txt
   ```
 
-Run the create_db script to create the database:
+  Run the create_db script to create the database:
 
   ```
   $ sh createdb.sh
+  ```
+
+  Creeate a .env file with the following variables:
+
+  ```
+  ENVIROMENT = "development"
   ```
 
   Then export the FLASK_APP environment variable:
