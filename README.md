@@ -38,12 +38,6 @@ The Postgres DB was deployed in [Render](https://render.com/)
   $ pip install -r requirements.txt
   ```
 
-  Run the create_db script to create the database:
-
-  ```
-  $ sh createdb.sh
-  ```
-
   Creeate a .env file with the following variables:
 
   ```
