@@ -23,7 +23,7 @@ dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path)
 
 
-environment = config[os.environ.get("ENVIROMENT")]
+environment = config['development']
 app = create_app(environment)
 
 

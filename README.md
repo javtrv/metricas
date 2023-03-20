@@ -38,12 +38,6 @@ The Postgres DB was deployed in [Render](https://render.com/)
   $ pip install -r requirements.txt
   ```
 
-  Creeate a .env file with the following variables:
-
-  ```
-  ENVIROMENT = "development"
-  ```
-
   Then export the FLASK_APP environment variable:
 
   ```
