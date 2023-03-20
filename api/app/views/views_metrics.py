@@ -3,6 +3,8 @@ from ..response import bad_request, response, not_found
 from ..models.metric import Metric
 from ..schema import metric_schema, metrics_schema, metric_params_schema
 
+
+
 # Creación del Blueprint
 api_metrics = Blueprint('metrics', __name__, url_prefix='/api-metrics')
 
@@ -45,3 +47,8 @@ def add_metric():
         return response(metric_schema.dump(new_metric))
     else:
         return bad_request(save)
+
+@api_metrics.route('/metrics/<start_date>/<end_date>', methods=['GET'])
+def get_metrics_by_date(start_date, end_date):
+    all_metrics = Metric.query.filter(Metric.date.between(start_date, end_date)).all()
+    return response(metrics_schema.dump(all_metrics))

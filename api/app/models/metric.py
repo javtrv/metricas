@@ -29,3 +29,4 @@ class Metric(db.Model):
         except:
             print("Unexpected error on save:", sys.exc_info())
             return "Unexpected error:", sys.exc_info()
+        
